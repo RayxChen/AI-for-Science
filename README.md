@@ -41,6 +41,8 @@ The problems possibly came from the following apsects when generating physical s
 
 1. The max pooling op lost too much information.
 
-2. The optimal transport problem WGAN relies on would require the Lipschitz continuity, convexity... for the Kantorovich's duality. These are more or less accomplished via the spectral norm or gradient penalty, maybe for the Lipschitz purpose it serves, but not necessarily the convexity. Therefore the duality may not hold all the time. And also there's information loss to maintain a stable training. The information loss may not be a problem for an image but an issue for physics.
+2. The compensation for 1, multi-dimensional loss led to difficulty in optimization.
 
-3. The data were continuous molecular dynamic trajectories without relaxation at each step, i.e. for the same T the variance was not learned thoroughly. 
+3. The optimal transport problem WGAN relies on would require the Lipschitz continuity, convexity... for the Kantorovich's duality. These are more or less accomplished via the spectral norm or gradient penalty, maybe for the Lipschitz purpose it serves, but not necessarily the convexity. Therefore the duality may not hold all the time. And also there's information loss to maintain a stable training. The information loss may not be a problem for an image but an issue for physics.
+
+4. The data were continuous molecular dynamic trajectories without relaxation at each step, i.e. for the same T the variance was not learned thoroughly. 

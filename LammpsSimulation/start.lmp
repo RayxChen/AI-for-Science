@@ -1,0 +1,29 @@
+echo both
+
+include		in.partitions
+
+include		in.temp
+include		in.pressure
+include 	in.seed
+units		metal
+atom_style	full
+
+read_data	data.final.crystal
+
+include 	in.setup
+
+minimize 1.0e-2 1.0e-3 100 1000
+
+reset_timestep 	0
+
+# NVT
+
+
+reset_timestep  0
+include 	in.dump
+
+fix		1 all nvt temp 10 510 ${tempDamp}
+run		25000000
+
+write_data	data.final.melting
+

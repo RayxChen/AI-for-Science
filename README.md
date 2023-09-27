@@ -37,6 +37,10 @@ Generated Samples
 ![354K](./StyleWGAN/GeneratedSamples/354K.png)
 
 
+Network Structure
+![network](./network.png)
+
+
 The problems possibly came from the following apsects when generating physical structures:
 
 1. The max pooling op lost too much information.
